@@ -1,0 +1,37 @@
+app:
+  name: "QR Code Generator"
+  version: "1.0.0"
+  description: "A college-level QR Code Generator Web Application"
+  author: "College Mini Project"
+
+server:
+  host: "0.0.0.0"
+  port: 8000
+  debug: false
+  reload: true
+  workers: 1
+
+api:
+  prefix: "/api/v1"
+  title: "QR Code Generator API"
+  docs_url: "/docs"
+  redoc_url: "/redoc"
+  openapi_url: "/openapi.json"
+
+storage:
+  output_dir: "static/qr_codes"
+  max_file_age_hours: 24
+  cleanup_on_startup: false
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: null
+  max_bytes: 10485760
+  backup_count: 5
+
+cors:
+  allow_origins: ["*"]
+  allow_credentials: true
+  allow_methods: ["*"]
+  allow_headers: ["*"]

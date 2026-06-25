@@ -1,0 +1,32 @@
+themes:
+  default: "dark"
+
+  available:
+    light:
+      label: "Light Mode"
+      primary_color: "#4F46E5"
+      background_color: "#FFFFFF"
+      secondary_background_color: "#F3F4F6"
+      text_color: "#000000"
+      description: "Clean light theme"
+
+    dark:
+      label: "Dark Mode"
+      primary_color: "#6366F1"
+      background_color: "#0F172A"
+      secondary_background_color: "#1E293B"
+      text_color: "#FFFFFF"
+      description: "Modern dark theme"
+
+ui:
+  sidebar_width: 320
+  max_qr_preview_size: 400
+  show_metadata: true
+  show_generation_time: true
+  animation_duration: 300
+
+streamlit:
+  page_title: "QR Code Generator"
+  page_icon: "🔳"
+  layout: "wide"
+  initial_sidebar_state: "expanded"

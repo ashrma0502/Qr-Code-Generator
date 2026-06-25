@@ -1,0 +1,83 @@
+qr:
+  # Default QR code settings
+  default_box_size: 10
+  default_border: 4
+  default_format: "png"
+  default_fill_color: "#000000"
+  default_back_color: "#FFFFFF"
+  default_error_correction: "M"
+
+  # Constraints
+  min_box_size: 1
+  max_box_size: 30
+  min_border: 0
+  max_border: 20
+  min_version: 1
+  max_version: 40
+
+  # Supported formats
+  supported_formats:
+    - "png"
+    - "jpg"
+    - "jpeg"
+    - "svg"
+
+  # Error correction levels
+  error_correction_levels:
+    L:
+      label: "L - Low (~7% recovery)"
+      description: "Lowest error correction, smallest QR code"
+    M:
+      label: "M - Medium (~15% recovery)"
+      description: "Default level, balanced performance"
+    Q:
+      label: "Q - Quartile (~25% recovery)"
+      description: "Higher correction for industrial use"
+    H:
+      label: "H - High (~30% recovery)"
+      description: "Highest correction, larger QR code"
+
+  # Input types
+  input_types:
+    text:
+      label: "Plain Text"
+      icon: "📝"
+      description: "Generate QR for any plain text"
+    url:
+      label: "Website URL"
+      icon: "🔗"
+      description: "Generate QR for website URLs"
+    email:
+      label: "Email Address"
+      icon: "📧"
+      description: "Generate QR for email addresses"
+    phone:
+      label: "Phone Number"
+      icon: "📞"
+      description: "Generate QR for phone numbers"
+    sms:
+      label: "SMS Message"
+      icon: "💬"
+      description: "Generate QR for SMS messages"
+    wifi:
+      label: "WiFi Credentials"
+      icon: "📶"
+      description: "Generate QR for WiFi network"
+    vcard:
+      label: "Contact Card (vCard)"
+      icon: "👤"
+      description: "Generate QR for contact information"
+    custom:
+      label: "Custom Data"
+      icon: "⚙️"
+      description: "Generate QR for custom formatted data"
+
+  # WiFi encryption types
+  wifi_encryption_types:
+    - "WPA"
+    - "WEP"
+    - "nopass"
+
+  # File naming
+  filename_prefix: "qrcode"
+  filename_separator: "_"

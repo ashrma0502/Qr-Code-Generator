@@ -1,0 +1,24 @@
+# Python byte-compiled / optimized / DLL files
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local virtual environment
+venv/
+.venv/
+env/
+
+# Pytest / unit tests cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local configuration and environment variables
+.env
+.streamlit/secrets.toml
+configs/local_*.yaml
+
+# Runtime / temporary files
+*.log
+static/qr_codes/
