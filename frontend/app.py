@@ -94,14 +94,21 @@ def inject_custom_css(theme_name: str = "dark") -> None:
         [data-testid="stMarkdownContainer"] h4,
         .streamlit-expanderHeader p,
         [data-testid="stSlider"] label,
-        [data-testid="stSlider"] span {{
+        [data-testid="stSlider"] span,
+        .stSelectbox svg,
+        [data-testid="stSelectbox"] svg,
+        [data-baseweb="select"] svg {{
             color: {text} !important;
+            fill: {text} !important;
         }}
 
         [data-testid="stCaptionContainer"],
         [data-testid="stCaptionContainer"] p,
+        [data-testid="stWidgetInstruction"],
+        [data-testid="stWidgetInstruction"] p,
         .stCaption,
-        .stCaption p {{
+        .stCaption p,
+        small {{
             color: {text_muted} !important;
         }}
 
