@@ -9,8 +9,8 @@ A full-stack **QR Code Generator** web application built as a college mini-proje
 | Service  | URL |
 |----------|-----|
 | 🌐 Frontend (Streamlit) | [qr-generator-web.streamlit.app](https://qr-generator-web.streamlit.app/) |
-| ⚙️ Backend API (FastAPI) | [qr-code-backend.up.railway.app](https://qr-code-backend.up.railway.app) |
-| 📚 API Docs (Swagger UI) | [qr-code-backend.up.railway.app/docs](https://qr-code-backend.up.railway.app/docs) |
+| ⚙️ Backend API (FastAPI) | [backend-qr-code.vercel.app](https://backend-qr-code.vercel.app) |
+| 📚 API Docs (Swagger UI) | [backend-qr-code.vercel.app/docs](https://backend-qr-code.vercel.app/docs) |
 
 ---
 
@@ -38,7 +38,7 @@ A full-stack **QR Code Generator** web application built as a college mini-proje
 | Image     | Pillow (PIL)          |
 | Testing   | Pytest + pytest-cov   |
 | Deploy FE | Streamlit Community Cloud |
-| Deploy BE | Railway               |
+| Deploy BE | Vercel                |
 
 ---
 
@@ -138,20 +138,17 @@ For Streamlit Cloud, set `BACKEND_URL` in the **Secrets** section of your app se
 
 ```toml
 # .streamlit/secrets.toml
-BACKEND_URL = "https://qr-code-backend.up.railway.app"
+BACKEND_URL = "https://backend-qr-code.vercel.app"
 ```
 
 ---
 
 ## 🌐 Deployment
 
-### Backend → Railway
+### Backend → Vercel
 
-The backend is deployed on [Railway](https://railway.app) using the `Procfile` at the project root:
-
-```
-web: uvicorn app.main:app --host 0.0.0.0 --port $PORT --app-dir backend
-```
+The backend is deployed on [Vercel](https://vercel.com) using `vercel.json` + `api/index.py` at the project root.
+Vercel auto-detects the config and serves the FastAPI app as a serverless function.
 
 ### Frontend → Streamlit Community Cloud
 
@@ -159,7 +156,7 @@ The frontend is deployed on [Streamlit Community Cloud](https://streamlit.io/clo
 
 - **Repository:** `ashrma0502/Qr-Code-Generator`
 - **Main file path:** `frontend/app.py`
-- **Secret:** `BACKEND_URL = https://qr-code-backend.up.railway.app`
+- **Secret:** `BACKEND_URL = https://backend-qr-code.vercel.app`
 
 ---
 
