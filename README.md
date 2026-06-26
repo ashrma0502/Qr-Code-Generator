@@ -46,6 +46,9 @@ A full-stack **QR Code Generator** web application built as a college mini-proje
 
 ```
 Qr-Code-Generator/
+├── api/
+│   ├── index.py          # Vercel serverless entry point
+│   └── requirements.txt  # Lean backend-only dependencies
 ├── backend/
 │   ├── app/
 │   │   ├── api/          # API route handlers (v1)
@@ -62,9 +65,10 @@ Qr-Code-Generator/
 │   └── app.py            # Streamlit app entry point
 ├── configs/
 │   ├── app.yaml          # Application configuration
+│   ├── qr.yaml           # QR code defaults
 │   └── themes.yaml       # UI theme definitions
-├── requirements.txt      # Python dependencies
-├── Procfile              # Railway deployment config (backend)
+├── requirements.txt      # Frontend dependencies (Streamlit Cloud)
+├── vercel.json           # Vercel deployment config
 └── README.md
 ```
 
@@ -132,7 +136,7 @@ PYTHONPATH=backend python -m pytest
 | Variable      | Description                           | Default                   |
 |---------------|---------------------------------------|---------------------------|
 | `BACKEND_URL` | URL of the FastAPI backend            | `http://localhost:8000`   |
-| `PORT`        | Port for the backend server (Railway) | `8000`                    |
+| `ENVIRONMENT` | App environment (`production` etc.)   | `development`             |
 
 For Streamlit Cloud, set `BACKEND_URL` in the **Secrets** section of your app settings:
 
@@ -147,8 +151,15 @@ BACKEND_URL = "https://backend-qr-code.vercel.app"
 
 ### Backend → Vercel
 
-The backend is deployed on [Vercel](https://vercel.com) using `vercel.json` + `api/index.py` at the project root.
-Vercel auto-detects the config and serves the FastAPI app as a serverless function.
+The backend is deployed on [Vercel](https://vercel.com) as a Python serverless function.
+
+| File | Purpose |
+|------|---------|
+| `vercel.json` | Routes all requests to the FastAPI handler |
+| `api/index.py` | Adds `backend/` to sys.path, exports `app` |
+| `api/requirements.txt` | Lean deps (~50MB) — no Streamlit/pandas bloat |
+
+Set the `ENVIRONMENT` environment variable to `production` in Vercel project settings.
 
 ### Frontend → Streamlit Community Cloud
 
