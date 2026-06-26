@@ -4,7 +4,6 @@ Loads settings from YAML config files
 """
 
 import logging
-from functools import lru_cache
 from pathlib import Path
 
 
@@ -153,11 +152,9 @@ class Settings(BaseSettings):
     )
 
 
-@lru_cache()
 def get_settings() -> Settings:
     """
-    Get cached application settings instance.
-    Uses LRU cache to avoid re-loading configs on every call.
+    Get application settings instance.
 
     Returns:
         Settings: Application settings
