@@ -10,7 +10,7 @@ venv/
 env/
 
 # Pytest / unit tests cache
-.pytest_cache/
+**/.pytest_cache/
 .coverage
 htmlcov/
 
