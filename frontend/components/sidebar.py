@@ -4,7 +4,7 @@ Renders backend settings, theme selection, and QR customization options.
 """
 
 import streamlit as st
-from services.config_loader import (
+from ..services.config_loader import (
     load_qr_config,
     get_supported_formats,
     get_error_correction_options,

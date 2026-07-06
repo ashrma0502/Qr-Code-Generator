@@ -13,8 +13,8 @@ import qrcode.image.svg
 from PIL import Image
 
 
-from app.core.config import get_settings
-from app.schemas.qr import QRGenerateRequest, QRGenerateResponse, QRMetadata
+from ..core.config import get_settings
+from ..schemas.qr import QRGenerateRequest, QRGenerateResponse, QRMetadata
 
 logger = logging.getLogger(__name__)
 

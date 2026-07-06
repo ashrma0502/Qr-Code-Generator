@@ -6,11 +6,11 @@ Renders dynamic forms based on selected QR input type.
 import streamlit as st
 
 
-from services.config_loader import (
+from ..services.config_loader import (
     get_input_types,
     get_wifi_encryption_types,
 )
-from utils.formatters import (
+from ..utils.formatters import (
     format_url_data,
     format_email_data,
     format_phone_data,

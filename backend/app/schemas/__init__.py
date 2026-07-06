@@ -2,7 +2,7 @@
 Schemas module initialization.
 """
 
-from app.schemas.qr import (
+from .qr import (
     QRGenerateRequest,
     QRGenerateResponse,
     QRMetadata,

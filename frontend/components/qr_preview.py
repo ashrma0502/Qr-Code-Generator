@@ -8,7 +8,7 @@ import base64
 import streamlit as st
 
 
-from services.api_client import generate_qr_code
+from ..services.api_client import generate_qr_code
 
 
 def render_qr_preview(
