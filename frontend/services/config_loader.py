@@ -51,24 +51,6 @@ def load_themes_config() -> dict:
     return _load_yaml("themes.yaml")
 
 
-def get_available_themes() -> dict[str, str]:
-    """
-    Get a mapping of theme key to label.
-
-    Returns:
-        dict: {theme_key: theme_label}
-    """
-    config = load_themes_config()
-    available = config.get("themes", {}).get("available", {})
-    return {k: v.get("label", k.title()) for k, v in available.items()}
-
-
-def get_default_theme() -> str:
-    """Get the default theme key."""
-    config = load_themes_config()
-    return config.get("themes", {}).get("default", "dark")
-
-
 def get_error_correction_options() -> dict[str, str]:
     """
     Get error correction level options with labels.

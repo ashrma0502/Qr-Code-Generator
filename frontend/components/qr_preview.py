@@ -179,23 +179,3 @@ def _render_download_button(image_bytes: bytes, fmt: str) -> None:
             use_container_width=True,
         )
 
-
-def _display_placeholder() -> None:
-    """Placeholder shown before any QR has been generated."""
-    st.markdown(
-        """
-        <div class="qr-preview-container">
-            <div class="qr-preview-placeholder">
-                <div style="font-size:5rem; margin-bottom:1rem;">🔳</div>
-                <div style="font-size:1.05rem; font-weight:600; color:rgba(255,255,255,0.5);">
-                    Your QR code will appear here
-                </div>
-                <div style="font-size:0.85rem; margin-top:0.5rem; color:rgba(255,255,255,0.3);">
-                    Fill in the form on the left and click<br/>
-                    <strong>Generate QR Code</strong> to get started
-                </div>
-            </div>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )

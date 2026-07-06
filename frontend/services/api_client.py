@@ -14,33 +14,6 @@ import requests
 logger = logging.getLogger(__name__)
 
 
-def check_backend_health(backend_url: str, timeout: int = 3) -> tuple[bool, str]:
-    """
-    Check if the backend API is healthy.
-
-    Args:
-        backend_url: Base URL of the backend API
-        timeout: Request timeout in seconds
-
-    Returns:
-        Tuple[bool, str]: (is_online, status_message)
-    """
-    try:
-        url = f"{backend_url.rstrip('/')}/health"
-        response = requests.get(url, timeout=timeout)
-        if response.status_code == 200:
-            data = response.json()
-            return True, data.get("status", "healthy")
-        return False, f"Unhealthy (HTTP {response.status_code})"
-    except requests.exceptions.ConnectionError:
-        return False, "Backend not reachable"
-    except requests.exceptions.Timeout:
-        return False, "Request timed out"
-    except Exception as e:
-        logger.error(f"Health check failed: {e}")
-        return False, f"Error: {str(e)}"
-
-
 def generate_qr_code(
     backend_url: str,
     payload: dict,

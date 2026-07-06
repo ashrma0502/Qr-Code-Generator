@@ -34,16 +34,3 @@ def valid_qr_request():
         "transparent_background": False,
     }
 
-
-@pytest.fixture
-def wifi_qr_request():
-    """Sample WiFi QR generation request payload."""
-    return {
-        "data": "WIFI:T:WPA;S:MyNetwork;P:MyPassword;;H:false;;",
-        "format": "png",
-        "box_size": 10,
-        "border": 4,
-        "fill_color": "#000000",
-        "back_color": "#FFFFFF",
-        "error_correction": "M",
-    }
