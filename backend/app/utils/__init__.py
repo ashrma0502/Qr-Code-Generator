@@ -2,7 +2,7 @@
 Utils module initialization.
 """
 
-from .validators import (
+from app.utils.validators import (
     validate_url,
     validate_email,
     validate_phone,
@@ -10,7 +10,7 @@ from .validators import (
     validate_ssid,
     validate_data_length,
 )
-from .formatters import (
+from app.utils.formatters import (
     format_url,
     format_email,
     format_phone,

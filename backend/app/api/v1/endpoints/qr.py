@@ -8,9 +8,9 @@ import logging
 
 from fastapi import APIRouter, HTTPException, Depends
 
-from ....schemas.qr import QRGenerateRequest, QRGenerateResponse, ErrorResponse
-from ....services.qr_service import QRCodeService, get_qr_service
-from ....utils.validators import validate_data_length
+from app.schemas.qr import QRGenerateRequest, QRGenerateResponse, ErrorResponse
+from app.services.qr_service import QRCodeService, get_qr_service
+from app.utils.validators import validate_data_length
 
 logger = logging.getLogger(__name__)
 

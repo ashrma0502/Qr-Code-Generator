@@ -2,6 +2,6 @@
 Services module initialization.
 """
 
-from .qr_service import QRCodeService, get_qr_service
+from app.services.qr_service import QRCodeService, get_qr_service
 
 __all__ = ["QRCodeService", "get_qr_service"]

@@ -4,7 +4,7 @@ Aggregates all v1 endpoint routers.
 """
 
 from fastapi import APIRouter
-from .endpoints.qr import router as qr_router
+from app.api.v1.endpoints.qr import router as qr_router
 
 api_router = APIRouter()
 
